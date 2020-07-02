@@ -27,7 +27,7 @@
 <c:set var="expiration" scope="request" value="0"/>
 
 <c:choose>
-    <c:when test='${searchMap[hitsName] eq null }'>
+    <c:when test='${(searchMap eq null) or (searchMap[hitsName] eq null)}'>
         <s:results var="resultsHits" limit="${limit}" approxCountVar="listApproxSize" >
             <c:set target="${moduleMap}" property="listTotalSize" value="${count}" />
             <c:set target="${moduleMap}" property="resultsHits" value="${resultsHits}" />
