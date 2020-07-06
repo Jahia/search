@@ -55,7 +55,7 @@
         <jcr:nodeProperty name="autoSuggestMaxTermCount" node="${currentNode}" var="autoSuggestMaxTermCount"/>        
         <c:if test="${moduleMap['listTotalSize'] <= functions:default(autoSuggestMinimumHitCount.long, 2)}">
             <%-- the number of original results is less than the configured threshold, we can start auto-suggest  --%>
-	        <s:suggestions runQuery="${autoSuggestHitCount.long > 0}" maxTermsToSuggest="${autoSuggestMaxTermCount ? autoSuggestMaxTermCount.long : null}">
+	        <s:suggestions runQuery="${autoSuggestHitCount != null and autoSuggestHitCount.long > 0}" maxTermsToSuggest="${autoSuggestMaxTermCount != null ? autoSuggestMaxTermCount.long : 1}">
 	        	<%-- we have a suggestion --%>
 		        <c:if test="${autoSuggestHitCount.long > 0 && suggestedCount > moduleMap['listTotalSize']}">
 		            <%-- found more hits for the suggestion than the original query brings --%>
