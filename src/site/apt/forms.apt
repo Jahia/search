@@ -52,7 +52,7 @@ Using search in templates
     (we omit resource bundles and layout stuff):
 
 +-------------
-  1: <s:form name="advancedSearchForm" method="post">
+  1: <s:form id="advancedSearchForm" name="advancedSearchForm" method="post">
   2:   <fieldset>
   3:     <legend>Text search</legend>
   4:       <label for="searchTerm">Search:</label>
@@ -120,7 +120,7 @@ Using search in templates
     (we omit resource bundles and layout stuff):
 
 +-------------
-  1: <s:form name="advancedSearchForm" method="post">
+  1: <s:form id="advancedSearchForm" name="advancedSearchForm" method="post">
   2:   <fieldset>
   3:     <legend>Text search</legend>
   4:       <label for="searchTerm">Search:</label>
