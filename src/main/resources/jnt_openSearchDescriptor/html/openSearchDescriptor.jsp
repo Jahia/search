@@ -6,6 +6,8 @@
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="functions" uri="http://www.jahia.org/tags/functions" %>
 
+<template:addResources type="javascript" resources="jquery.min.js"/>
+
 <c:set var="descriptorUrl" value="${url.server}${url.context}${url.templateTypes['xml']}"/>
 <c:set var="title" value="${functions:default(currentNode.propertiesAsString['jcr:title'], 'Jahia search')}"/>
 <template:addResources>
@@ -21,8 +23,16 @@
                     alert("You will need a browser which supports OpenSearch to install this plugin.");
                 }
             }
+
+            $(document).ready(function() {
+                document.querySelector("a[href='#opensearch']").addEventListener("click", function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    addOpenSearch('${descriptorUrl}');
+                });
+            });
         </script>
     </template:addResources>
     <c:set var="org.jahia.modules.search.addOpenSearch" value="true" scope="request"/>
 </c:if>
-<a href="#opensearch" onclick="addOpenSearch('${descriptorUrl}'); return false;" title="${fn:escapeXml(title)}"><img src="<c:url value='${url.currentModule}/icons/jnt_openSearchDescriptor.png'/>" height="16" width="16" alt=" "/>&nbsp;${fn:escapeXml(title)}</a>
+<a href="#opensearch" title="${fn:escapeXml(title)}"><img src="<c:url value='${url.currentModule}/icons/jnt_openSearchDescriptor.png'/>" height="16" width="16" alt=" "/>&nbsp;${fn:escapeXml(title)}</a>

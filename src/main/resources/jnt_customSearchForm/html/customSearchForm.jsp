@@ -67,7 +67,7 @@
             <label for="searchCustomTerm">${fn:escapeXml(title.string)}:&nbsp;</label>
         </c:if>
         <fmt:message key='search.startSearching' var="startSearching"/>
-        <s:term match="all_words" id="searchCustomTerm" value="${startSearching}" searchIn="siteContent,tags" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" class="text-input"/>
+        <s:term match="all_words" id="searchCustomTerm" placeholder="${startSearching}" searchIn="siteContent,tags" class="text-input"/>
         <s:site value="${renderContext.site.name}" display="false"/>
         <s:pagePath value="${searchPath}" display="false" includeChildren="true"/>
         <s:nodeType value="${searchType}" display="false" />
