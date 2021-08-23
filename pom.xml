@@ -70,7 +70,7 @@
             org.jahia.services,
             org.jahia.services.search
         </jahia.modules.importPackage>
-        <jahia-module-signature>MCwCFHsM6SfP9woxGpIuDCSfu4ixgQWAAhRvpaT8PDhm46nvqy6/8cTtu0ho1g==</jahia-module-signature>
+        <jahia-module-signature>MCwCFEwQatx6ASzOo26418u3Z14H2r2JAhQyyTBNvPoaDQ/tjOurfN1X8GTEzQ==</jahia-module-signature>
     </properties>
 
     <repositories>
