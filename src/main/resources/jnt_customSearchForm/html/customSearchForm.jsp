@@ -56,8 +56,6 @@
 </c:if>
 <c:set var="xPathQuery" value="/jcr:root${searchPath}//element(*, ${searchType})[jcr:contains(.,'{$q}*')]" />
 
-<c:url var="findUrl" value="${url.find}"/>
-
 <template:addCacheDependency uuid="${currentNode.properties.result.string}"/>
 <c:if test="${not empty currentNode.properties.result.node}">
     <c:url value='${url.base}${currentNode.properties.result.node.path}.html' var="searchUrl"/>
