@@ -28,7 +28,7 @@
                 document.querySelector("a[href='#opensearch']").addEventListener("click", function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    addOpenSearch('${descriptorUrl}');
+                    addOpenSearch('${functions:escapeJavaScript(descriptorUrl)}');
                 });
             });
         </script>
