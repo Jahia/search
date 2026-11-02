@@ -10,7 +10,7 @@
 <template:addCacheDependency uuid="${currentNode.properties.result.string}"/>
 <c:if test="${not empty currentNode.properties.result.node}">
 <c:url value='${url.base}${currentNode.properties.result.node.path}.html' var="searchUrl"/>
-<s:form method="post" class="simplesearchform" action="${searchUrl}">
+<s:form method="post" class="simplesearchform" action="${fn:escapeXml(searchUrl)}">
 		<jcr:nodeProperty name="jcr:title" node="${currentNode}" var="title"/>
 		<c:if test="${not empty title.string}">
 		<label for="searchTerm">${fn:escapeXml(title.string)}:&nbsp;</label>
