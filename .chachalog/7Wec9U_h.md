@@ -3,4 +3,4 @@
 search: patch
 ---
 
-Improved search result links so they open pages whose names contain special characters.
+Improved search result links so they open pages whose names contain certain special characters.
